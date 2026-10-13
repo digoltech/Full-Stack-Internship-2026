@@ -1,0 +1,885 @@
+# Practice Day 1 — JavaScript Fundamentals Assessment
+
+**Topics:** Variables, scope, hoisting, execution context, call stack, functions, and debugging
+
+**Suggested duration:** 90–120 minutes
+
+**Total marks:** 100
+
+**Instructions:**
+
+1. Attempt every section.
+2. For output questions, write your prediction before running the code.
+3. Explain your reasoning; correct output alone may not receive full marks.
+4. Write code independently.
+5. Test edge cases and fix errors before submission.
+
+---
+
+# Section 1 — Multiple-Choice Questions (20 Marks)
+
+**Instructions:** Choose one correct answer for each question. Each question carries 1 mark.
+
+### Q1. Which keyword declares a block-scoped variable that can be reassigned?
+
+A. `const`
+
+B. `let`
+
+C. `function`
+
+D. `return`
+
+### Q2. What is the output?
+
+```js
+var score = 10;
+score = 20;
+console.log(score);
+```
+
+A. `10`
+
+B. `20`
+
+C. `undefined`
+
+D. Error
+
+### Q3. Which keyword prevents reassignment of a variable binding?
+
+A. `var`
+
+B. `let`
+
+C. `const`
+
+D. `console`
+
+### Q4. What is the output?
+
+```js
+console.log(price);
+var price = 100;
+```
+
+A. `100`
+
+B. `null`
+
+C. `undefined`
+
+D. `ReferenceError`
+
+### Q5. What happens here?
+
+```js
+console.log(age);
+let age = 20;
+```
+
+A. Prints `20`
+
+B. Prints `undefined`
+
+C. Prints `null`
+
+D. Throws a `ReferenceError`
+
+### Q6. Which variable is accessible outside this block?
+
+```js
+if (true) {
+  var a = 10;
+  let b = 20;
+  const c = 30;
+}
+```
+
+A. Only `a`
+
+B. Only `b`
+
+C. Only `c`
+
+D. All three
+
+### Q7. What is scope?
+
+A. The number of functions in a program
+
+B. The area in which a variable can be accessed
+
+C. The output of a function
+
+D. A type of loop
+
+### Q8. What is the output?
+
+```js
+const city = "Anand";
+
+function showCity() {
+  const city = "Surat";
+  console.log(city);
+}
+
+showCity();
+console.log(city);
+```
+
+A. `Anand`, `Anand`
+
+B. `Surat`, `Surat`
+
+C. `Surat`, `Anand`
+
+D. Error
+
+### Q9. What does `return` do in a function?
+
+A. Always prints a value
+
+B. Sends a value back to the caller and ends that function execution
+
+C. Declares a variable
+
+D. Repeats the function
+
+### Q10. What is the output?
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));
+```
+
+A. `23`
+
+B. `5`
+
+C. `undefined`
+
+D. Error
+
+### Q11. What is the output?
+
+```js
+function greet() {
+  console.log("Hello");
+}
+
+const result = greet();
+
+console.log(result);
+```
+
+A. `Hello`, `Hello`
+
+B. `Hello`, `undefined`
+
+C. `undefined`, `Hello`
+
+D. Error
+
+### Q12. Which of the following is an arrow function?
+
+A.
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+B.
+```js
+const add = (a, b) => a + b;
+```
+
+C.
+```js
+var add = return a + b;
+```
+
+D.
+```js
+add function(a, b);
+```
+
+### Q13. Which function can generally be called before its declaration?
+
+A. An initialized `const` function expression only
+
+B. A function declaration
+
+C. Every arrow function
+
+D. No function
+
+### Q14. What does the call stack track?
+
+A. Database records
+
+B. Active function calls
+
+C. HTML elements
+
+D. CSS properties
+
+### Q15. What happens when a function calls another function?
+
+A. The entire program always restarts
+
+B. The called function executes, and control returns to the caller when it finishes
+
+C. The original function is permanently deleted
+
+D. Every variable becomes global
+
+### Q16. What is the output?
+
+```js
+const student = { marks: 70 };
+student.marks = 85;
+
+console.log(student.marks);
+```
+
+A. `70`
+
+B. `85`
+
+C. `undefined`
+
+D. Error
+
+### Q17. What is the output?
+
+```js
+const square = number => number * number;
+
+console.log(square(4));
+```
+
+A. `8`
+
+B. `16`
+
+C. `4`
+
+D. Error
+
+### Q18. Which keyword is generally preferred when a variable does not need reassignment?
+
+A. `var`
+
+B. `let`
+
+C. `const`
+
+D. `return`
+
+### Q19. What happens when a function finishes without an explicit return statement?
+
+A. It automatically returns `0`
+
+B. It automatically returns `null`
+
+C. It returns `undefined`
+
+D. It always throws an error
+
+### Q20. Which is the best practice for reusable calculations?
+
+A. Copy the same calculation into many places
+
+B. Use global variables for every value
+
+C. Write a function that accepts inputs and returns a result
+
+D. Use `console.log()` instead of returning values in every situation
+
+---
+
+# Section 2 — Predict the Output (20 Marks)
+
+**Instructions:** Each question carries 2 marks. Write the exact output or error and explain why.
+
+## Q1. Variable Reassignment
+
+```js
+let count = 5;
+
+count = count + 3;
+
+console.log(count);
+```
+
+## Q2. Block Scope
+
+```js
+let city = "Anand";
+
+if (true) {
+  let city = "Ahmedabad";
+  console.log(city);
+}
+
+console.log(city);
+```
+
+## Q3. `var` Hoisting
+
+```js
+console.log(total);
+
+var total = 100;
+
+console.log(total);
+```
+
+## Q4. Function Return
+
+```js
+function multiply(a, b) {
+  return a * b;
+}
+
+const result = multiply(4, 5);
+
+console.log(result);
+```
+
+## Q5. Missing Return
+
+```js
+function calculate(a, b) {
+  console.log(a + b);
+}
+
+const answer = calculate(10, 20);
+
+console.log(answer);
+```
+
+## Q6. Nested Function Calls
+
+```js
+function first() {
+  console.log("A");
+  second();
+  console.log("B");
+}
+
+function second() {
+  console.log("C");
+}
+
+first();
+```
+
+## Q7. Function Declaration
+
+```js
+sayHello();
+
+function sayHello() {
+  console.log("Hello");
+}
+```
+
+## Q8. Function Expression
+
+```js
+// Predict what happens when this code runs.
+runTask();
+
+const runTask = function () {
+  console.log("Done");
+};
+```
+
+## Q9. Object Property Update
+
+```js
+const user = {
+  name: "Asha"
+};
+
+user.name = "Neha";
+
+console.log(user.name);
+```
+
+## Q10. Variable Shadowing
+
+```js
+let marks = 60;
+
+function updateMarks() {
+  let marks = 90;
+  console.log(marks);
+}
+
+updateMarks();
+
+console.log(marks);
+```
+
+---
+
+# Section 3 — Find and Fix the Bugs (15 Marks)
+
+**Instructions:** Each question carries 3 marks. Identify the error, explain the cause, and provide corrected code.
+
+## Q1. Incorrect Scope
+
+```js
+function showName() {
+  const name = "Rahul";
+}
+
+showName();
+
+console.log(name);
+```
+
+## Q2. Incorrect Initialization
+
+```js
+console.log(course);
+
+const course = "MERN Stack";
+```
+
+## Q3. Incorrect Return Value
+
+```js
+function calculateTotal(price, quantity) {
+  console.log(price * quantity);
+}
+
+const total = calculateTotal(200, 3);
+
+console.log("Total:", total);
+```
+
+Modify the function so that the calling code can use the calculated total.
+
+## Q4. Incorrect Variable Declaration
+
+```js
+const completedTasks = 0;
+
+completedTasks = completedTasks + 1;
+
+console.log(completedTasks);
+```
+
+Correct the declaration and explain why.
+
+## Q5. Incorrect Function Call
+
+```js
+const add = function (a, b) {
+  return a + b;
+};
+
+console.log(add(5));
+```
+
+Correct the function call so it calculates the sum of `5` and `10`.
+
+---
+
+# Section 4 — Coding Exercises (25 Marks)
+
+**Instructions:** Write working JavaScript code for each task. Use clear function names and test your solution.
+
+## Q1. Student Introduction (3 Marks)
+
+Write a function called `introduceStudent(name, age, course)`.
+
+Example:
+
+```js
+introduceStudent("Asha", 21, "MERN Stack");
+```
+
+Expected output:
+
+```text
+Hello, I am Asha, I am 21 years old, and I am learning MERN Stack.
+```
+
+## Q2. Even or Odd (4 Marks)
+
+Write a function called `checkEvenOdd(number)`.
+
+Requirements:
+
+- Return `"Even"` if the number is even.
+- Return `"Odd"` if the number is odd.
+
+Test:
+
+```js
+checkEvenOdd(4);
+checkEvenOdd(7);
+checkEvenOdd(0);
+```
+
+## Q3. Discount Calculator (4 Marks)
+
+Write a function called `calculateDiscount(price, percentage)`.
+
+Requirements:
+
+- Calculate the discount amount.
+- Return the final price after discount.
+- Reject invalid negative prices and percentages outside 0–100. You may return `null` for invalid input.
+
+Examples:
+
+```js
+calculateDiscount(1000, 10); // 900
+calculateDiscount(500, 20);  // 400
+```
+
+## Q4. Find the Largest Number (4 Marks)
+
+Write a function called `getLargest(a, b, c)` that returns the largest of three numbers.
+
+Test:
+
+```js
+getLargest(10, 20, 15);
+getLargest(100, 50, 25);
+getLargest(-1, -5, -3);
+```
+
+## Q5. Grade Calculator (5 Marks)
+
+Write a function called `getGrade(marks)`.
+
+Use these rules:
+
+| Marks | Grade |
+|---|---|
+| 90–100 | A |
+| 75–89 | B |
+| 50–74 | C |
+| 0–49 | Fail |
+| Outside 0–100 or non-numeric | Invalid marks |
+
+Test boundary values, including `49`, `50`, `74`, `75`, `89`, `90`, and `100`.
+
+## Q6. Student Search (5 Marks)
+
+Given:
+
+```js
+const students = [
+  { name: "Asha", marks: 82 },
+  { name: "Ravi", marks: 67 },
+  { name: "Neha", marks: 91 },
+  { name: "Imran", marks: 48 }
+];
+```
+
+Write:
+
+```js
+function findStudent(students, studentName) {
+  // Your code here
+}
+```
+
+Requirements:
+
+- Return the matching student object.
+- Return `undefined` if the student does not exist.
+- Test both cases.
+- Explain how the function determines whether a match exists.
+
+---
+
+# Section 5 — Mini Project (20 Marks)
+
+## Project: Student Result Processor
+
+Build a program that processes a list of students.
+
+### Starter Data
+
+```js
+const students = [
+  { name: "Asha", marks: 82 },
+  { name: "Ravi", marks: 67 },
+  { name: "Neha", marks: 91 },
+  { name: "Imran", marks: 48 },
+  { name: "Meera", marks: 74 }
+];
+```
+
+### Required Functions
+
+Implement the following functions.
+
+#### 1. `getTotalMarks(students)`
+
+Return the sum of all student marks.
+
+Expected result:
+
+```text
+362
+```
+
+#### 2. `getAverageMarks(students)`
+
+Return the average marks. Return `null` when the array is empty.
+
+Expected result:
+
+```text
+72.4
+```
+
+#### 3. `getStudentResult(student)`
+
+Return `"Pass"` when marks are at least 50 and `"Fail"` otherwise.
+
+#### 4. `findStudentByName(students, name)`
+
+Return the matching student or `undefined`.
+
+#### 5. `getTopStudent(students)`
+
+Return the student with the highest marks. Return `undefined` when the array is empty.
+
+#### 6. `printStudentReport(students)`
+
+Print each student's name, marks, and pass/fail result.
+
+### Project Requirements
+
+- Use separate functions for separate operations.
+- Use meaningful names.
+- Return calculated values where appropriate.
+- Do not modify the original array when calculating results.
+- Handle an empty array.
+- Test a student who passes and a student who fails.
+- Explain your code to the instructor.
+
+### Suggested Output
+
+```text
+Student Report
+--------------
+Asha  | Marks: 82 | Result: Pass
+Ravi  | Marks: 67 | Result: Pass
+Neha  | Marks: 91 | Result: Pass
+Imran | Marks: 48 | Result: Fail
+Meera | Marks: 74 | Result: Pass
+
+Total Marks: 362
+Average Marks: 72.4
+Top Student: Neha
+```
+
+### Evaluation Rubric
+
+| Criteria | Marks |
+|---|---:|
+| Correct functions and calculations | 8 |
+| Scope and variable usage | 3 |
+| Edge-case handling | 3 |
+| Code readability | 2 |
+| Testing and explanation | 4 |
+| **Total** | **20** |
+
+---
+
+# Section 6 — Viva and Conceptual Questions
+
+The instructor can ask these questions verbally.
+
+1. Explain the difference between `var`, `let`, and `const`.
+2. What is scope, and why is it important?
+3. Explain global scope, function scope, and block scope using examples.
+4. What is hoisting?
+5. What is the Temporal Dead Zone?
+6. Why does `var` return `undefined` before assignment?
+7. Why does `let` throw a `ReferenceError` before initialization?
+8. What is an execution context?
+9. What is the call stack?
+10. What happens when one function calls another function?
+11. What is the difference between a parameter and an argument?
+12. What is the difference between `return` and `console.log()`?
+13. What happens when a function has no return statement?
+14. Explain function declaration versus function expression.
+15. What is an arrow function?
+16. Does `const` make an object immutable?
+17. Why should functions be reusable?
+18. Why should calculated values usually be returned?
+19. What is variable shadowing?
+20. How would you debug a `ReferenceError`?
+
+---
+
+# Section 7 — Submission Checklist
+
+- [ ] Complete all 20 MCQs.
+- [ ] Complete all output-prediction questions.
+- [ ] Fix all five debugging exercises.
+- [ ] Complete all six coding exercises.
+- [ ] Finish the Student Result Processor.
+- [ ] Answer the viva questions.
+- [ ] Test normal inputs and edge cases.
+- [ ] Save your files in `week-1-day-1-javascript`.
+- [ ] Add a `README.md` explaining the project.
+- [ ] Submit your GitHub repository link to the instructor.
+
+## Suggested Folder Structure
+
+```text
+week-1-day-1-javascript/
+├── README.md
+├── variables-and-scope.js
+├── hoisting-practice.js
+├── function-practice.js
+├── coding-exercises.js
+└── student-result-processor.js
+```
+
+---
+
+# Instructor Answer Key
+
+**Do not distribute this section with the student copy if you want students to complete the assessment independently.**
+
+## MCQ Answers
+
+| Question | Answer |
+|---|---|
+| 1 | B |
+| 2 | B |
+| 3 | C |
+| 4 | C |
+| 5 | D |
+| 6 | A |
+| 7 | B |
+| 8 | C |
+| 9 | B |
+| 10 | B |
+| 11 | B |
+| 12 | B |
+| 13 | B |
+| 14 | B |
+| 15 | B |
+| 16 | B |
+| 17 | B |
+| 18 | C |
+| 19 | C |
+| 20 | C |
+
+## Output Question Answers
+
+### Q1
+
+```text
+8
+```
+
+The value of `count` changes from `5` to `8`.
+
+### Q2
+
+```text
+Ahmedabad
+Anand
+```
+
+The inner block declares a separate `city` variable.
+
+### Q3
+
+```text
+undefined
+100
+```
+
+The `var` declaration is processed before the assignment executes.
+
+### Q4
+
+```text
+20
+```
+
+The function returns `4 * 5`.
+
+### Q5
+
+```text
+30
+undefined
+```
+
+The function prints `30` but does not return it.
+
+### Q6
+
+```text
+A
+C
+B
+```
+
+`second()` runs before execution returns to the remaining statements in `first()`.
+
+### Q7
+
+```text
+Hello
+```
+
+A function declaration can generally be called before its declaration.
+
+### Q8
+
+A `ReferenceError` occurs because `runTask` is accessed before its `const` variable has been initialized.
+
+### Q9
+
+```text
+Neha
+```
+
+The property is reassigned successfully.
+
+### Q10
+
+```text
+90
+60
+```
+
+The function's local `marks` variable shadows the outer variable.
+
+## Coding Assessment Guidance
+
+Evaluate the logic, not just the exact syntax. Students may use different correct approaches, provided they satisfy the requirements, handle the specified edge cases, and can explain their code.
+
+For the Student Result Processor, verify:
+
+- Total marks equal `362`.
+- Average marks equal `72.4`.
+- Imran is marked as failing.
+- Neha is identified as the top student.
+- Unknown student searches return `undefined`.
+- Empty arrays are handled as specified.
+- The original student data is not unnecessarily modified.

@@ -2,8 +2,6 @@
 
 **Topics:** Variables, scope, hoisting, execution context, call stack, and functions
 
-**Duration:** 90–120 minutes  
-**Total Marks:** 100
 
 ## Instructions
 

@@ -21,3 +21,9 @@ Build a registration form using controlled React inputs.
 - Add a reusable submit button or field component.
 - Test valid submission and each invalid field.
 - Ensure labels, error text, and focus states are accessible.
+
+## Optional Responsive Styling
+
+- Convert the form to a mobile-first layout.
+- Use a single-column layout below 700px and two columns above 700px.
+- Reuse CSS variables for spacing and form control colors.

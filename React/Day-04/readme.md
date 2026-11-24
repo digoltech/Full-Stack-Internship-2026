@@ -10,3 +10,4 @@
 - Extracts reusable form components.
 - Practices form bugs, edge cases, and accessibility basics.
 - Includes a complete registration-form assessment.
+- Adds mobile-first responsive layouts and reusable CSS Modules.

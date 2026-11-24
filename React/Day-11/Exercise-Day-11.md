@@ -143,7 +143,7 @@ You receive a small React application with **8–10 intentional bugs** (mutation
 
 ## 7. What Comes Next
 
-You are now ready for **Week 7: Node.js and Express fundamentals**. In the backend weeks you will:
+You are now ready for **Node.js and Express fundamentals**. In the backend weeks you will:
 
 - Replace DummyJSON with **your own REST API** (Express + MongoDB).
 - Replace the demo login with **real authentication** (hashed passwords, JWT, HttpOnly cookies).
